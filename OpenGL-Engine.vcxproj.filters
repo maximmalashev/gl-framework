@@ -24,12 +24,21 @@
     <ClCompile Include="src\common\application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\rendering\buffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\window\window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\common\application.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rendering\buffer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

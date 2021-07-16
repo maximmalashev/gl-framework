@@ -1,5 +1,8 @@
 #pragma once
 
+#include <vector>
+#include <memory>
+
 #include "../window/window.h"
 
 namespace gl
@@ -7,12 +10,12 @@ namespace gl
 	class Application
 	{
 	public:
-		Application(Window* window);
-		~Application();
+		Application();
+		virtual ~Application();
 
-		void Start();
+		virtual void Initialize(WindowSettings& windowSettings);
 		virtual void Update() = 0;
 	protected:
-		Window* m_window;
+		std::shared_ptr<Window> m_window;
 	};
 }

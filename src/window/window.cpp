@@ -4,7 +4,7 @@
 
 namespace gl 
 {
-	Window::Window(int width, int height, std::string title)
+	Window::Window(WindowSettings& settings)
 	{
 		if (!glfwInit())
 		{
@@ -12,7 +12,12 @@ namespace gl
 			std::exit(-1);
 		}
 
-		m_glfwWindow = glfwCreateWindow(width, height, title.c_str(), nullptr, nullptr);
+		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+		glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+
+		m_glfwWindow = glfwCreateWindow(settings.width, settings.height, settings.title.c_str(), nullptr, nullptr);
 		if (!m_glfwWindow)
 		{
 			std::cout << "ERROR: glfw window could not initialize." << std::endl;
@@ -21,6 +26,15 @@ namespace gl
 		}
 
 		glfwMakeContextCurrent(m_glfwWindow);
+
+		if (glewInit() != GLEW_OK)
+		{
+			std::cout << "ERROR: glew could not initialize." << std::endl;
+			glfwTerminate();
+			std::exit(-1);
+		}
+
+		glewExperimental = true;
 	}
 
 	Window::~Window() 
