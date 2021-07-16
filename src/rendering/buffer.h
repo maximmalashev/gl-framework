@@ -1,9 +1,5 @@
 #pragma once
 
-#include "../common.h"
-
-#include <vector>
-
 namespace gl
 {
 	class Buffer

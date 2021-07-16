@@ -1,7 +1,7 @@
+#include "pch.h"
+
 #include "application.h"
 #include "../rendering/buffer.h"
-
-#include <iostream>
 
 namespace gl
 {

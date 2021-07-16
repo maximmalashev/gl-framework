@@ -1,7 +1,6 @@
-#include "../common.h"
-#include "buffer.h"
+#include "pch.h"
 
-#include <numeric>
+#include "buffer.h"
 
 namespace gl
 {

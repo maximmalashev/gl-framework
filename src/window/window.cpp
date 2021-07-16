@@ -1,6 +1,6 @@
-#include "window.h"
+#include "pch.h"
 
-#include <iostream>
+#include "window.h"
 
 namespace gl 
 {
