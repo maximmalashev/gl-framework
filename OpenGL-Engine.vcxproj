@@ -92,7 +92,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\common\application.cpp" />
-    <ClCompile Include="pch.cpp">
+    <ClCompile Include="src\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">pch.h</PrecompiledHeaderFile>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
@@ -103,7 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\gl.h" />
-    <ClInclude Include="pch.h" />
+    <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\common\application.h" />
     <ClInclude Include="src\rendering\buffer.h" />
     <ClInclude Include="src\window\window.h" />
