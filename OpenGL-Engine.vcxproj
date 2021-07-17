@@ -99,6 +99,8 @@
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <ClCompile Include="src\rendering\buffer.cpp" />
+    <ClCompile Include="src\rendering\shader.cpp" />
+    <ClCompile Include="src\rendering\vertex_array.cpp" />
     <ClCompile Include="src\window\window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -106,7 +108,12 @@
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\common\application.h" />
     <ClInclude Include="src\rendering\buffer.h" />
+    <ClInclude Include="src\rendering\shader.h" />
+    <ClInclude Include="src\rendering\vertex_array.h" />
     <ClInclude Include="src\window\window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\shaders\sprite.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
