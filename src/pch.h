@@ -3,6 +3,8 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
+#include <glm/glm.hpp>
+
 #include <string>
 #include <memory>
 #include <vector>
@@ -10,6 +12,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <array>
 
 namespace gl
 {

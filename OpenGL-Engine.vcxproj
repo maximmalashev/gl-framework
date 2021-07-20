@@ -47,7 +47,7 @@
     <OutDir>$(SolutionDir)$(ProjectName)/out/$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)$(ProjectName)/out-int/$(Configuration)\</IntDir>
     <TargetName>gl</TargetName>
-    <IncludePath>$(ProjectDir);$(SolutionDir)OpenGL-Engine/src;$(SolutionDir)deps/glew-2.1.0/include;$(SolutionDir)deps/glfw-3.3.4-x64/include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir);$(SolutionDir)OpenGL-Engine/src;$(SolutionDir)deps/glew-2.1.0/include;$(SolutionDir)deps/glm;$(SolutionDir)deps/glfw-3.3.4-x64/include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)deps/glew-2.1.0/lib/Release/x64;$(SolutionDir)deps/glfw-3.3.4-x64/lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -55,7 +55,7 @@
     <OutDir>$(SolutionDir)$(ProjectName)/out/$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)$(ProjectName)/out-int/$(Configuration)\</IntDir>
     <TargetName>gl</TargetName>
-    <IncludePath>$(ProjectDir);$(SolutionDir)OpenGL-Engine/src;$(SolutionDir)deps/glew-2.1.0/include;$(SolutionDir)deps/glfw-3.3.4-x64/include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir);$(SolutionDir)OpenGL-Engine/src;$(SolutionDir)deps/glew-2.1.0/include;$(SolutionDir)deps/glm;$(SolutionDir)deps/glfw-3.3.4-x64/include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)deps/glew-2.1.0/lib/Release/x64;$(SolutionDir)deps/glfw-3.3.4-x64/lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -99,6 +99,7 @@
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <ClCompile Include="src\rendering\buffer.cpp" />
+    <ClCompile Include="src\rendering\render_commands.cpp" />
     <ClCompile Include="src\rendering\shader.cpp" />
     <ClCompile Include="src\rendering\vertex_array.cpp" />
     <ClCompile Include="src\window\window.cpp" />
@@ -108,6 +109,7 @@
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\common\application.h" />
     <ClInclude Include="src\rendering\buffer.h" />
+    <ClInclude Include="src\rendering\render_commands.h" />
     <ClInclude Include="src\rendering\shader.h" />
     <ClInclude Include="src\rendering\vertex_array.h" />
     <ClInclude Include="src\window\window.h" />

@@ -10,7 +10,6 @@ namespace gl
 		Bind();
 
 		vbo->Bind();
-		glBufferData(GL_ARRAY_BUFFER, vbo->GetCount() * sizeof(f32), vbo->GetData(), GL_STATIC_DRAW);
 
 		auto layout = vbo->GetLayout();
 
@@ -26,7 +25,6 @@ namespace gl
 		}
 
 		ibo->Bind();
-		glBufferData(GL_ELEMENT_ARRAY_BUFFER, ibo->GetCount() * sizeof(u32), ibo->GetData(), GL_STATIC_DRAW);
 	}
 
 	VertexArray::~VertexArray()

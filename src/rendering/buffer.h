@@ -24,10 +24,7 @@ namespace gl
 
 		void Bind() override;
 		static void Unbind();
-
-		inline u32* GetData() const { return m_data; }
 	private:
-		u32* m_data;
 	};
 
 	class VertexBuffer final : public Buffer
@@ -41,10 +38,9 @@ namespace gl
 
 		inline i32 GetSize() const { return m_size; }
 		inline std::vector<i32> GetLayout() const { return m_layout; }
-		inline f32* GetData() const { return m_data; }
-	private:
-		f32* m_data;
 
+		void SetData(f32* data, u32 size);
+	private:
 		i32 m_size;
 		std::vector<i32> m_layout;
 	};
