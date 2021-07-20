@@ -19,7 +19,7 @@ namespace gl
 		for (i32 location = 0; location < layout.size(); location++)
 		{
 			glVertexAttribPointer(location, layout[location], GL_FLOAT, GL_FALSE, stride, reinterpret_cast<const void*>(offset));
-			glEnableVertexAttribArray(0);
+			glEnableVertexAttribArray(location);
 
 			offset += layout[location] * sizeof(f32);
 		}

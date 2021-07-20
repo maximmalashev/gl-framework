@@ -12,6 +12,8 @@ namespace gl
 
 	Buffer::~Buffer() = default;
 
+	/* INDEX BUFFER */
+
 	IndexBuffer::IndexBuffer(i32 count, u32* data)
 		: Buffer(count) 
 	{
@@ -28,17 +30,26 @@ namespace gl
 	{
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_id);
 	}
+
 	void IndexBuffer::Unbind()
 	{
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 	}
+
+	/* VERTEX BUFFER */
+
 	VertexBuffer::VertexBuffer(i32 count, i32 size, f32* data, std::vector<i32> layout)
 		: Buffer(count), m_size(size), m_layout(layout) 
 	{
-		auto mode = data ? GL_STATIC_DRAW : GL_DYNAMIC_DRAW;
-		
 		Bind();
-		glBufferData(GL_ARRAY_BUFFER, count * sizeof(f32), data, mode);
+		glBufferData(GL_ARRAY_BUFFER, count * sizeof(f32), data, GL_STATIC_DRAW);
+	}
+
+	VertexBuffer::VertexBuffer(i32 count, i32 size, std::vector<i32> layout)
+		: Buffer(count), m_size(size), m_layout(layout)
+	{
+		Bind();
+		glBufferData(GL_ARRAY_BUFFER, count * sizeof(f32), nullptr, GL_DYNAMIC_DRAW);
 	}
 
 	VertexBuffer::~VertexBuffer()

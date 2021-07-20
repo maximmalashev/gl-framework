@@ -31,6 +31,7 @@ namespace gl
 	{
 	public:
 		VertexBuffer(i32 count, i32 size, f32* data, std::vector<i32> layout);
+		VertexBuffer(i32 count, i32 size, std::vector<i32> layout);
 		~VertexBuffer() override;
 
 		void Bind() override;

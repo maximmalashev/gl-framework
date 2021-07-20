@@ -8,5 +8,6 @@
 #include "rendering/shader.h"
 #include "rendering/vertex_array.h"
 #include "rendering/render_commands.h"
+#include "rendering/sprite_renderer.h"
 
 #include "window/window.h"

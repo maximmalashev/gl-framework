@@ -12,13 +12,19 @@ namespace gl
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		}
 
-		void DrawTriangles(std::shared_ptr<VertexArray> vao, std::shared_ptr<Shader> shader)
+		void DrawTriangles(std::shared_ptr<VertexArray> vao, std::shared_ptr<Shader> shader, u32 indexCount)
 		{
 			shader->Use();
 			vao->Bind();
 
-			glDrawElements(GL_TRIANGLES, vao->GetIndexBuffer()->GetCount(), GL_UNSIGNED_INT, nullptr);
+			glDrawElements(GL_TRIANGLES, indexCount, GL_UNSIGNED_INT, nullptr);
 		}
+
+		void DrawTriangles(std::shared_ptr<VertexArray> vao, std::shared_ptr<Shader> shader)
+		{
+			DrawTriangles(vao, shader, vao->GetIndexBuffer()->GetCount());
+		}
+
 	}
 }
 

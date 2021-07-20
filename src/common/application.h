@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../window/window.h"
+#include "../rendering/sprite_renderer.h"
 
 namespace gl
 {
@@ -14,6 +15,7 @@ namespace gl
 		virtual void OnUpdate() = 0;
 		virtual void OnRender() = 0;
 	protected:
+		std::unique_ptr<SpriteRenderer> m_renderer;
 		std::shared_ptr<Window> m_window;
 	};
 }
