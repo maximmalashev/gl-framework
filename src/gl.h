@@ -12,5 +12,6 @@
 #include "rendering/sprite.h"
 
 #include "scene/transform.h"
+#include "scene/orthographic_camera.h"
 
 #include "window/window.h"

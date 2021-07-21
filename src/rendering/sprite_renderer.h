@@ -1,6 +1,7 @@
 #pragma once
 
 #include "sprite.h"
+#include "../scene/orthographic_camera.h"
 
 namespace gl
 {
@@ -10,7 +11,7 @@ namespace gl
 		SpriteRenderer();
 		~SpriteRenderer();
 
-		void Setup();
+		void Setup(const OrthographicCamera& camera);
 		void Flush();
 		void Finish();
 

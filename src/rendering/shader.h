@@ -16,6 +16,8 @@ namespace gl
 		inline u32 GetID() const { return m_id; }
 
 		void Use();
+		
+		void SetUniformMat4(std::string name, glm::mat4 value);
 	private:
 		u32 m_id;
 

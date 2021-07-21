@@ -6,6 +6,8 @@
 #include "vertex_array.h"
 #include "render_commands.h"
 
+#include "../scene/orthographic_camera.h"
+
 namespace gl
 {
 	struct Vertex
@@ -81,7 +83,10 @@ namespace gl
 		delete[] RendererSettings::verticesHead;
 	}
 
-	void SpriteRenderer::Setup() { }
+	void SpriteRenderer::Setup(const OrthographicCamera& camera) 
+	{ 
+		RendererSettings::shader->SetUniformMat4("uProjectionView", camera.GetTransformationMatrix() * camera.GetProjectionMatrix());
+	}
 
 	void SpriteRenderer::Flush()
 	{
@@ -110,7 +115,7 @@ namespace gl
 
 		for (i32 vertex = 0; vertex < 4; vertex++)
 		{
-			RendererSettings::verticesTail->position = static_cast<glm::vec3>(sprite.GetMatrix() * RendererSettings::spriteVertices[vertex]);
+			RendererSettings::verticesTail->position = static_cast<glm::vec3>(sprite.GetTransformationMatrix() * RendererSettings::spriteVertices[vertex]);
 			RendererSettings::verticesTail->color = sprite.GetColor();
 
 			RendererSettings::verticesTail++;

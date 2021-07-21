@@ -11,7 +11,7 @@ namespace gl
 
 	Transform::~Transform() = default;
 
-	glm::mat4 Transform::GetMatrix() const
+	glm::mat4 Transform::GetTransformationMatrix() const
 	{
 		glm::mat4 transformation = glm::mat4(1.0f);
 

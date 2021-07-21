@@ -104,6 +104,7 @@
     <ClCompile Include="src\rendering\sprite.cpp" />
     <ClCompile Include="src\rendering\sprite_renderer.cpp" />
     <ClCompile Include="src\rendering\vertex_array.cpp" />
+    <ClCompile Include="src\scene\orthographic_camera.cpp" />
     <ClCompile Include="src\scene\transform.cpp" />
     <ClCompile Include="src\window\window.cpp" />
   </ItemGroup>
@@ -117,6 +118,7 @@
     <ClInclude Include="src\rendering\sprite.h" />
     <ClInclude Include="src\rendering\sprite_renderer.h" />
     <ClInclude Include="src\rendering\vertex_array.h" />
+    <ClInclude Include="src\scene\orthographic_camera.h" />
     <ClInclude Include="src\scene\transform.h" />
     <ClInclude Include="src\window\window.h" />
   </ItemGroup>

@@ -8,7 +8,7 @@ namespace gl
 		Transform();
 		~Transform();
 
-		glm::mat4 GetMatrix() const;
+		glm::mat4 GetTransformationMatrix() const;
 
 		inline glm::vec3 GetPosition() const { return m_position; }
 		inline glm::vec3 GetRotation() const { return m_rotation; }

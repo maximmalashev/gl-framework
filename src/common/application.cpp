@@ -25,10 +25,7 @@ namespace gl
 			RenderCommands::Clear(0.0f, 0.0f, 0.0f);
 
 			OnUpdate();
-
-			m_renderer->Setup();
 			OnRender();
-			m_renderer->Finish();
 
 			m_window->SwapBuffers();
 			m_window->PollEvents();
