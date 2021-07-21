@@ -1,14 +1,9 @@
 #pragma once
 
+#include "sprite.h"
+
 namespace gl
 {
-	class Sprite
-	{
-	public:
-		glm::vec3 position;
-		glm::vec4 color;
-	};
-
 	class SpriteRenderer
 	{
 	public:

@@ -9,5 +9,8 @@
 #include "rendering/vertex_array.h"
 #include "rendering/render_commands.h"
 #include "rendering/sprite_renderer.h"
+#include "rendering/sprite.h"
+
+#include "scene/transform.h"
 
 #include "window/window.h"

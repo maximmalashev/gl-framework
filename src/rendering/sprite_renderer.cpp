@@ -30,12 +30,12 @@ namespace gl
 		std::shared_ptr<VertexArray> vao;
 		std::shared_ptr<Shader> shader;
 
-		glm::vec3 spriteVertices[] = {
+		glm::vec4 spriteVertices[] = {
 
-			glm::vec3( 0.5f,  0.5f,  0.0f),
-			glm::vec3( 0.5f, -0.5f,  0.0f),
-			glm::vec3(-0.5f, -0.5f,  0.0f),
-			glm::vec3(-0.5f,  0.5f,  0.0f)
+			glm::vec4( 0.5f,  0.5f,  0.0f, 1.0f),
+			glm::vec4( 0.5f, -0.5f,  0.0f, 1.0f),
+			glm::vec4(-0.5f, -0.5f,  0.0f, 1.0f),
+			glm::vec4(-0.5f,  0.5f,  0.0f, 1.0f)
 		
 		};
 	}
@@ -110,8 +110,8 @@ namespace gl
 
 		for (i32 vertex = 0; vertex < 4; vertex++)
 		{
-			RendererSettings::verticesTail->position = sprite.position + RendererSettings::spriteVertices[vertex];
-			RendererSettings::verticesTail->color = sprite.color;
+			RendererSettings::verticesTail->position = static_cast<glm::vec3>(sprite.GetMatrix() * RendererSettings::spriteVertices[vertex]);
+			RendererSettings::verticesTail->color = sprite.GetColor();
 
 			RendererSettings::verticesTail++;
 		}
