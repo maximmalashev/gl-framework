@@ -11,6 +11,7 @@
 #include <memory>
 #include <vector>
 #include <numeric>
+#include <algorithm>
 #include <iostream>
 #include <fstream>
 #include <sstream>

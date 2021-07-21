@@ -17,7 +17,10 @@ namespace gl
 		inline bool ShouldClose() const { return glfwWindowShouldClose(m_glfwWindow); }
 		void SwapBuffers();
 		void PollEvents();
+
+		static void KeyCallback(GLFWwindow* window, i32 key, i32 scancode, i32 action, i32 mods);
 	private:
 		GLFWwindow* m_glfwWindow;
+
 	};
 }

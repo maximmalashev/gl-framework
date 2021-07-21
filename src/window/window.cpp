@@ -1,6 +1,7 @@
 #include "pch.h"
 
 #include "window.h"
+#include "input.h"
 
 namespace gl 
 {
@@ -26,6 +27,7 @@ namespace gl
 		}
 
 		glfwMakeContextCurrent(m_glfwWindow);
+		glfwSetKeyCallback(m_glfwWindow, KeyCallback);
 
 		if (glewInit() != GLEW_OK)
 		{
@@ -47,7 +49,24 @@ namespace gl
 	}
 	void Window::PollEvents()
 	{
+		Input::ResetPressed();
+		Input::ResetReleased();
+
 		glfwPollEvents();
+	}
+
+	void Window::KeyCallback(GLFWwindow* window, i32 key, i32 scancode, i32 action, i32 mods)
+	{
+		if (action == GLFW_PRESS)
+		{
+			Input::m_keysPressed[key] = true;
+			Input::m_keys[key] = true;
+		}
+		else if (action == GLFW_RELEASE)
+		{
+			Input::m_keysReleased[key] = true;
+			Input::m_keys[key] = false;
+		}
 	}
 }
 
