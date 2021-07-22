@@ -14,6 +14,7 @@ namespace gl
 		virtual void Run();
 		virtual void OnUpdate() = 0;
 		virtual void OnRender() = 0;
+		virtual void Stop();
 	protected:
 		std::unique_ptr<SpriteRenderer> m_renderer;
 		std::shared_ptr<Window> m_window;

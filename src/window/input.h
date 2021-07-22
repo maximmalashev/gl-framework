@@ -115,9 +115,7 @@ namespace gl
 
 	class Input final
 	{
-
 		friend class Window;
-	
 	public:
 		static bool KeyPressed(const KeyCode code);
 		static bool KeyReleased(const KeyCode code);

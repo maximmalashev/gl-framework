@@ -55,6 +55,11 @@ namespace gl
 		glfwPollEvents();
 	}
 
+	void Window::Close()
+	{
+		glfwSetWindowShouldClose(m_glfwWindow, GLFW_TRUE);
+	}
+
 	void Window::KeyCallback(GLFWwindow* window, i32 key, i32 scancode, i32 action, i32 mods)
 	{
 		if (action == GLFW_PRESS)

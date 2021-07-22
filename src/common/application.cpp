@@ -33,5 +33,10 @@ namespace gl
 
 		m_window->~Window();
 	}
+
+	void Application::Stop()
+	{
+		m_window->Close();
+	}
 }
 
