@@ -20,11 +20,17 @@ namespace gl
 
 	void Application::Run()
 	{
+		float lastTime = 0;
+
 		while (!m_window->ShouldClose())
 		{
+			float time = m_window->GetTime();
+			float deltaTime = time - lastTime;
+			lastTime = time;
+
 			RenderCommands::Clear(0.0f, 0.0f, 0.0f);
 
-			OnUpdate();
+			OnUpdate(deltaTime);
 			OnRender();
 
 			m_window->SwapBuffers();

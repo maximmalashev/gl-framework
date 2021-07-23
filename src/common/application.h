@@ -12,7 +12,7 @@ namespace gl
 		virtual ~Application();
 
 		virtual void Run();
-		virtual void OnUpdate() = 0;
+		virtual void OnUpdate(float deltaTime) = 0;
 		virtual void OnRender() = 0;
 		virtual void Stop();
 	protected:

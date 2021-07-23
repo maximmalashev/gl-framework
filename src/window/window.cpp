@@ -37,6 +37,8 @@ namespace gl
 		}
 
 		glewExperimental = true;
+
+		SetVSync(settings.vSync);
 	}
 
 	Window::~Window() 
@@ -53,6 +55,16 @@ namespace gl
 		Input::ResetReleased();
 
 		glfwPollEvents();
+	}
+
+	float Window::GetTime()
+	{
+		return glfwGetTime();
+	}
+
+	void Window::SetVSync(bool value)
+	{
+		glfwSwapInterval(value ? 1 : 0);
 	}
 
 	void Window::Close()
