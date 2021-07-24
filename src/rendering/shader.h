@@ -17,7 +17,7 @@ namespace gl
 
 		void Use();
 		
-		void SetUniformMat4(std::string name, glm::mat4 value);
+		void SetUniformMat4(const std::string& name, const glm::mat4& value);
 	private:
 		u32 m_id;
 

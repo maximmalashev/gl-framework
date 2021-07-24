@@ -22,7 +22,7 @@ namespace gl
         glUseProgram(m_id);
     }
 
-	void Shader::SetUniformMat4(std::string name, glm::mat4 value)
+	void Shader::SetUniformMat4(const std::string& name, const glm::mat4& value)
 	{
         Use();
         int uniformLocation = glGetUniformLocation(m_id, name.c_str());

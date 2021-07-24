@@ -18,7 +18,7 @@ namespace gl
 
 	namespace RendererSettings
 	{
-		const u32 MAX_SPRITES = 10000;
+		const u32 MAX_SPRITES = 50000;
 		const u32 MAX_VERTICES = MAX_SPRITES * 4;
 		const u32 MAX_INDICES = MAX_SPRITES * 6;
 

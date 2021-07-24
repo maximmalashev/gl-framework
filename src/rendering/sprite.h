@@ -7,7 +7,7 @@ namespace gl
 	class Sprite : public Transform 
 	{
 	public:
-		Sprite(glm::vec4 color);
+		Sprite(glm::vec4 color = glm::vec4(1.0f, 0.0f, 0.0f, 1.0f));
 		~Sprite();
 
 		inline glm::vec4 GetColor() const { return m_color; }

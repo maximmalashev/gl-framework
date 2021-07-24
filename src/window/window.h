@@ -6,7 +6,7 @@ namespace gl
 	{
 		i32 width, height;
 		std::string title;
-		bool vSync = true;
+		bool vSync = false;
 	};
 
 	class Window
