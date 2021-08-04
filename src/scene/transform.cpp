@@ -17,10 +17,15 @@ namespace gl
 	{
 		glm::mat4 transformation = glm::mat4(1.0f);
 
+		/* Translation */
 		transformation = glm::translate(transformation, m_position);
-		transformation = glm::rotate(transformation, glm::radians(m_rotation.x), glm::vec3(1.0f, 0.0f, 0.0f));
-		transformation = glm::rotate(transformation, glm::radians(m_rotation.y), glm::vec3(0.0f, 1.0f, 0.0f));
-		transformation = glm::rotate(transformation, glm::radians(m_rotation.z), glm::vec3(0.0f, 0.0f, 1.0f));
+
+		/* Rotation */
+		glm::quat rotationQuaternion = glm::quat(glm::radians(m_rotation));
+		glm::mat4 rotation = glm::mat4_cast(rotationQuaternion);
+		transformation *= rotation;
+
+		/* Scale */
 		transformation = glm::scale(transformation, m_scale);
 
 		m_transformationMatrix = transformation;
